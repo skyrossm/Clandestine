@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "RRR",
+        "RXR",
+        "RRR"
+    ],
+   
+    "key":
+    {
+        "R":
+        {
+            "item": "clandestine:ertha_block"
+        },
+        "X":
+        {
+        	"item": "clandestine:weak_symbol"
+        }
+    },
+   
+    "result":
+    {
+        "item": "clandestine:ertha_symbol",
+        "count": 1
+    }
+}

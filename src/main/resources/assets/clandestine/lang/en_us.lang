@@ -1,0 +1,12 @@
+//Creative Tab
+itemGroup.clandestine=Clandestine
+
+//Arcane Symbols
+item.weak_symbol.name=Weak Arcane Symbol
+item.ertha_symbol.name=Ertha Arcane Symbol
+item.medial_symbol.name=Medial Arcane Symbol
+item.aficionado_symbol.name=Aficionado Arcane Symbol
+item.doyen_symbol.name=Doyen Arcane Symbol
+item.peroration_symbol.name=Peroration Arcane Symbol
+
+tile.ertha_block.name=Block of Ertha
