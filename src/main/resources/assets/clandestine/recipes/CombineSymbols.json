@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "clandestine:weak_symbol"
+    },
+ 
+    {
+      "item": "clandestine:weak_symbol"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "clandestine:weak_symbol",
+        "damage": 2,
+        "count": 1
+    }
+}

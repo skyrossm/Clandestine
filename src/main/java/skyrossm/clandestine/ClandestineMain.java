@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import skyrossm.clandestine.commands.DimTeleportCommand;
 import skyrossm.clandestine.init.ModRecipes;
 import skyrossm.clandestine.proxy.CommonProxy;
 import skyrossm.clandestine.util.Reference;
@@ -29,6 +31,7 @@ public class ClandestineMain {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
+        proxy.preInit(event);
     }
 
     @EventHandler
@@ -42,7 +45,12 @@ public class ClandestineMain {
     
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-    	
+    	proxy.postInit(event);
+    }
+    
+    @EventHandler
+    public void serverLoad(FMLServerStartingEvent event) {
+    	event.registerServerCommand(new DimTeleportCommand());
     }
     
 }

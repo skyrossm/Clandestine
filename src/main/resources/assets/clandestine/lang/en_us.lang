@@ -1,5 +1,6 @@
 //Creative Tab
-itemGroup.clandestine=Clandestine
+itemGroup.clandestine.items=Clandestine Items
+itemGroup.clandestine.blocks=Clandestine Blocks
 
 //Arcane Symbols
 item.weak_symbol.name=Weak Arcane Symbol

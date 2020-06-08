@@ -8,14 +8,14 @@ import skyrossm.clandestine.init.ModItems;
 import skyrossm.clandestine.util.Reference;
 
 public class ClandestineCreativeTabs {
-    public static final CreativeTabs CLANDESTINE_ITEM_TAB = new CreativeTabs(Reference.MOD_ID)
+    public static final CreativeTabs CLANDESTINE_ITEM_TAB = new CreativeTabs(Reference.MOD_ID + ".items")
     {
         @Override
         public ItemStack getTabIconItem() {
             return new ItemStack(ModItems.WEAK_SYMBOL, 1);
         }
     };
-    public static final CreativeTabs CLANDESTINE_BLOCK_TAB = new CreativeTabs(Reference.MOD_ID)
+    public static final CreativeTabs CLANDESTINE_BLOCK_TAB = new CreativeTabs(Reference.MOD_ID + ".blocks")
     {
         @Override
         public ItemStack getTabIconItem() {
