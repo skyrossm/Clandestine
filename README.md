@@ -4,14 +4,14 @@
 Currently very WIP, no release versions yet. You can download and build the mod yourself to playtest early.
  
 # What you can and cannot do
-You CAN:
+- You CAN:
     Do whatever, I don't care. Steal the code, yoink the textures.
     Modpacks need no attribution but is always appreciated.
     Update to newer versions cause you know I won't
 
-You CANNOT:
+- You CANNOT:
     Just don't try to reupload it as your own mod without changing something.
     
 # Credits
-Skyrossm (lead artist, lead programmer, lead story writer)
-A lot of Forge tutorials
+- Skyrossm (lead artist, lead programmer, lead story writer)
+- A lot of Forge tutorials
