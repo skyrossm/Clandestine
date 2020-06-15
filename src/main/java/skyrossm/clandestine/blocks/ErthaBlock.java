@@ -9,9 +9,10 @@ public class ErthaBlock extends BlockBase {
 		super(name, mat);
 		
 		this.setSoundType(SoundType.SNOW);
-		this.setHardness(1.0F);
-		this.setResistance(7.5F);
+		this.setHardness(0.5F);
+		this.setResistance(2.5F);
 		this.setLightLevel(0.05F);
+		this.setHarvestLevel("shovel", -1);
 	}
 
 }

@@ -1,0 +1,8 @@
+{
+	"music.arcane.bgm":
+	{
+		"category": "music",
+		"subtitle": "music.arcane.bgm",
+		"sounds": [{ "name": "clandestine:music/arcane/bgm", "stream": "true" }]
+	}
+}

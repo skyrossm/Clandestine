@@ -44,7 +44,10 @@ public class DimTeleportCommand extends CommandBase {
         }
 
         if (sender instanceof EntityPlayer) {
-            ClandestineTeleporter.teleportToDimension((EntityPlayer) sender, dim, 0, 100, 0);
+        	EntityPlayer player = (EntityPlayer) sender;
+        	BlockPos startPos = new BlockPos(0, 50, 0);
+        	BlockPos newPos = player.getEntityWorld().getMinecraftServer().getWorld(dim).getTopSolidOrLiquidBlock(startPos);
+            ClandestineTeleporter.teleportToDimension((EntityPlayer) sender, dim, newPos.getX(), newPos.getY(), newPos.getZ());
         }
 	}
 	

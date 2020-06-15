@@ -3,11 +3,9 @@ package skyrossm.clandestine.init;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
-import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import skyrossm.clandestine.dimensions.ErthaBiome;
+import skyrossm.clandestine.dimensions.biomes.ErthaBiome;
 
 public class ModBiomes {
 
@@ -21,8 +19,8 @@ public class ModBiomes {
 		biome.setRegistryName(name);
 		ForgeRegistries.BIOMES.register(biome);
 		BiomeDictionary.addTypes(biome, types);
-		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, 10));
-		BiomeManager.addVillageBiome(biome, true);
+		//BiomeManager.addBiome(biomeType, new BiomeEntry(biome, 10));
+		//BiomeManager.addVillageBiome(biome, true);
 		return biome;
 	}
 }

@@ -3,8 +3,8 @@ package skyrossm.clandestine.items;
 import net.minecraft.item.Item;
 import skyrossm.clandestine.ClandestineMain;
 import skyrossm.clandestine.creativetab.ClandestineCreativeTabs;
-import skyrossm.clandestine.init.IHasModel;
 import skyrossm.clandestine.init.ModItems;
+import skyrossm.clandestine.util.interfaces.IHasModel;
 
 public class ItemBase extends Item implements IHasModel {
 	

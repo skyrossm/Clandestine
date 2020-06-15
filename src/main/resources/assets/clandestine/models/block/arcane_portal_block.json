@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "clandestine:blocks/arcane_portal_block"
+   }
+}

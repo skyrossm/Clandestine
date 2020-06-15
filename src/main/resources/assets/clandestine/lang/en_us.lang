@@ -10,4 +10,6 @@ item.aficionado_symbol.name=Aficionado Arcane Symbol
 item.doyen_symbol.name=Doyen Arcane Symbol
 item.peroration_symbol.name=Peroration Arcane Symbol
 
+//Blocks
 tile.ertha_block.name=Block of Ertha
+tile.arcane_portal_block.name=Arcane Portal
