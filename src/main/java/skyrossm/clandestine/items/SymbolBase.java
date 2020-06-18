@@ -24,6 +24,8 @@ public class SymbolBase extends ItemBase {
 	
 	private int requiredEXP;
 	
+	private boolean readyToLevel;
+	
 	public SymbolBase(String name, int initialAF, float initialDB, int initialReqEXP) {
 		super(name);
 		initialArcaneForce = initialAF;
@@ -31,6 +33,7 @@ public class SymbolBase extends ItemBase {
 		setLevel(1);
 		setRequiredEXP(initialReqEXP);
 		setExperience(1);
+		setMaxStackSize(1);
 	}
 	
 	@Override
@@ -87,6 +90,7 @@ public class SymbolBase extends ItemBase {
 	public void levelUp() {
 		setLevel(getLevel() + 1);
 		setRequiredEXP(getRequiredEXP() + (getLevel() * 3));
+		setReadyToLevel(false);
 	}
 
 	/**
@@ -105,19 +109,17 @@ public class SymbolBase extends ItemBase {
 	
 	/**
 	 * @param experience the experience to add to this symbol
-	 * @return didLevel if the symbol leveled up or not
+	 * 
 	 */
-	public boolean addExperience(int experience) {
+	public void addExperience(int experience) {
 		int experienceToAdd = getExperience() + experience;
 		if(experienceToAdd >= getRequiredEXP()) {
 			int extraEXP = getRequiredEXP() - experienceToAdd;
-			levelUp();
-			if(extraEXP < 1) extraEXP = 1;	
+			setReadyToLevel(true);
+			if(extraEXP < 1) extraEXP = 1;
 			setExperience(extraEXP);
-			return true;
 		}else {
 			setExperience(experienceToAdd);
-			return false;
 		}
 	}
 
@@ -133,6 +135,20 @@ public class SymbolBase extends ItemBase {
 	 */
 	public void setRequiredEXP(int requiredEXP) {
 		this.requiredEXP = requiredEXP;
+	}
+
+	/**
+	 * @return the readyToLevel
+	 */
+	public boolean isReadyToLevel() {
+		return readyToLevel;
+	}
+
+	/**
+	 * @param readyToLevel the readyToLevel to set
+	 */
+	public void setReadyToLevel(boolean readyToLevel) {
+		this.readyToLevel = readyToLevel;
 	}
 	
 

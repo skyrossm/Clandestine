@@ -106,7 +106,7 @@ public class ArcaneSkyRenderer extends IRenderHandler {
 		// Rotate sky texture
 		float ang = this.getSkyRotation(world.getWorldTime(), partialTicks) * 360.0F;
 		GlStateManager.pushMatrix();
-		GlStateManager.rotate(ang, 0.0F, 1.0F, 0.5F);
+		GlStateManager.rotate(ang, 0.0F, 0.1F, 1.0F);
 		
 		for (int k1 = 0; k1 < 6; ++k1) {
 			GlStateManager.pushMatrix();
@@ -168,7 +168,7 @@ public class ArcaneSkyRenderer extends IRenderHandler {
 		}
 		//Render red stars
 		GlStateManager.rotate(30.0F, 1.0F, 0.0F, 1.0F);
-		GlStateManager.color(0.4F, 0.2F, 0.2F, 1.0F);
+		GlStateManager.color(0.3F, 0.2F, 0.2F, 0.9F);
 		if (this.vboEnabled) {
 			this.starVBO.bindBuffer();
 			GlStateManager.glEnableClientState(32884);

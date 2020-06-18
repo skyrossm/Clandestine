@@ -4,7 +4,6 @@ import java.io.File;
 
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -33,18 +32,18 @@ import skyrossm.clandestine.util.handlers.SoundsHandler;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
 public class ClandestineMain {
-	
+
 	@Instance
 	public static ClandestineMain instance;
-	
+
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
-	public static Configuration config;
-	
-    private static Logger logger;
 
-    @EventHandler
+	public static Configuration config;
+
+	private static Logger logger;
+
+	@EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
         File directory = event.getModConfigurationDirectory();
@@ -65,27 +64,31 @@ public class ClandestineMain {
         if(event.getSide().isClient())
         	MinecraftForge.EVENT_BUS.register(new ClientEventsHandler());
         MinecraftForge.EVENT_BUS.register(new CommonEventsHandler());
+        
+        logger.info("Clandestine loaded.");
     }
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
-        ModRecipes.init();
-        NetworkRegistry.INSTANCE.registerGuiHandler(ClandestineMain.instance, new GuiHandler());
-        if(event.getSide().isClient()) {
-        	SoundsHandler.registerSounds();
-        }
-    }
-    
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        if (config.hasChanged()) {
-            config.save();
-        }
-    }
-    
-    @EventHandler
-    public void serverLoad(FMLServerStartingEvent event) {
-    	event.registerServerCommand(new DimTeleportCommand());
-    }
-    
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		ModRecipes.init();
+		NetworkRegistry.INSTANCE.registerGuiHandler(ClandestineMain.instance, new GuiHandler());
+		if (event.getSide().isClient()) {
+			SoundsHandler.registerSounds();
+		}
+		
+	}
+
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		if (config.hasChanged()) {
+			config.save();
+		}
+	}
+
+	@EventHandler
+	public void serverLoad(FMLServerStartingEvent event) {
+		event.registerServerCommand(new DimTeleportCommand());
+		logger.info("Clandestine-server loaded.");
+	}
+
 }
